@@ -157,6 +157,10 @@ section {
   padding-top: 150px;
 }
 
+section:last-of-type {
+  margin-bottom: 150px;
+}
+
 section > * {
   width: 50%;
   max-width: 800px;
@@ -223,6 +227,14 @@ section ul li {
   height: auto;
 }
 
+#l6 {
+  margin-bottom: 20px;
+}
+
+#l6 img {
+  width: 50px;
+  height: auto;
+}
 
 @media (max-width: 700px) {
   nav {
