@@ -1,21 +1,4 @@
 $( document ).ready(function() {
-
-  function mutateBlobNav() {
-    var blobHeight = 1030;
-    var $nav = $('#blob-nav');
-
-    if (($nav.offset().top + $nav.height()) > blobHeight) {
-      $nav.addClass('smaller');
-    } else {
-      $nav.removeClass('smaller');
-    }
-  }
-  $(document).scroll(function() {
-    // mutateBlobNav();
-  });
-    // mutateBlobNav();
-
-
     // Select all links with hashes
 $('a[href*="#"]')
   // Remove links that don't actually link to anything
