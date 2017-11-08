@@ -1,0 +1,34 @@
+STOP
+-DB, mark them as unsub
+
+HELP
+-static
+
+HELLO
+- static, explain commands
+
+DADJOKE
+- API to icanhazdadjoke.com
+
+LOCATION
+- API to google/apple maps
+
+DIRECTIONS FROM
+- API to google/apple maps
+
+DATE
+- static
+- - google cal
+- - apple cal
+
+HOTEL
+- static + link to location/site
+
+GIFT
+- static + link to honeyfund
+
+RSVP
+- DB, mark as RSVP'd
+
+SCHEDULE
+- static 

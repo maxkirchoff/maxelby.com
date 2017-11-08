@@ -1,291 +1,283 @@
-/*! HTML5 Boilerplate v6.0.1 | MIT License | https://html5boilerplate.com/ */
-
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+@import './boiler.css';
+@import './fonts.css';
 
 html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
+  overflow-x: hidden;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+body {
+  background: #753579;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  font-family: 'anc', system, sans-serif;
+  color: #EAADC8;
+  padding-top:100px;
+  margin-top: -100px;
 }
 
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+*:focus {
+  outline: none;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+a, a:hover, a:visited, a:active {
+  color: #EAADC8;
+  border-bottom: 1px solid #fff;
+  text-decoration: none;
 }
 
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
+a:hover {
+  border-bottom: none;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  border: none;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-    resize: vertical;
+#blobs-container {
+  position: relative;
+  left: 50%;
+}
+#blobs {
+  position: absolute;
+  width: 2428px;
+  height: 1030px;
+  top: -160px;
+  left: -1213px;
+  right: 0;
 }
 
-/* ==========================================================================
-   Browser Upgrade Prompt
-   ========================================================================== */
-
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+.blob {
+  position: absolute;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden {
-    display: none !important;
+#blob-1 {
+  width: 39.8%;
+  top:3%;
+  left: 7.4%;
 }
 
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
+#blob-2 {
+  width: 39.4%;
+  top:0;
+  left: 46.2%;
+}
 
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
+#blob-3 {
+  width: 28.6%;
+  top: 29.8%;
+  left: 29.6%
+}
+
+#blob-4 {
+  width: 23.8%;
+  top:12.8%;
+  left: 19.3%;
+}
+
+#blob-5 {
+  width: 37%;
+  top:40.5%;
+  left: 57.3%;
+}
+
+#blob-nav {
+  position: fixed;
+  right: -40px;
+  top: 20px;
+  transition: all 1s ease-in;
+}
+
+#blob-nav.smaller {
+  top: -40px;
+
+}
+
+#title {
+  position: absolute;
+  top: 40.9%;
+  width: 18%;
+  left: 41%;
+}
+
+.blob {
+    -webkit-animation-name: Floating;
+    -webkit-animation-duration: 8s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+.blob:nth-of-type(n) {
+  -webkit-animation-delay: 500ms;
+}
+.blob:nth-of-type(2) {
+  -webkit-animation-delay: 4000ms;
+}
+.blob:nth-of-type(3) {
+  -webkit-animation-delay: 2500ms;
+}
+.blob:nth-of-type(4) {
+  -webkit-animation-delay: 1000ms;
+}
+.blob:nth-of-type(5) {
+  -webkit-animation-delay: 3000ms;
+}
+
+@-webkit-keyframes Floating{
+    from {-webkit-transform:translate(0px, 0);}
+    65% {-webkit-transform:translate(20px, 0);}
+    to {-webkit-transform: translate(-0px, 0);    }
+}
+
+header {
+  height: calc( 1030px - 160px);
+}
+
+header nav {
+  position: absolute;
+  top: 35px;
+  left: 100px;
+  right: 0;
+  bottom: 0;
+}
+
+header nav a, header nav a:hover, header nav a:visited, header nav a:active {
+  display: block;
+  text-decoration: none;
+  color: #753579;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 10px 0;
+  font-size: 14px;
+  border: none;
+}
+
+section {
+  padding-top: 150px;
+}
+
+section > * {
+  width: 50%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section h2 {
+  font-size: 36px;
+  letter-spacing: 2.5px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+section h3 {
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+section p {
+  margin-top: 0;
+}
+
+section p strong, section p b {
+  letter-spacing: 1px;
+}
+
+section ul {
+  padding: 0 0 0 20px;
+}
+
+section ul li {
+
+}
+
+#cta h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 60px;
+  text-align: center;
+  line-height: 1.2;
+  color: #EAADC8;
+}
+
+#cta p {
+  text-align: center;
+}
+
+.hotel {
+  margin-bottom: 40px;
+}
+
+.flying-tips, .schedule-item {
+  padding-left: 40px;
+}
+
+.image {
+  width: 60%;
+  max-width: 1200px;
+  margin: 150px auto 0;
+}
+.image img {
+  width: 100%;
+  height: auto;
+}
+
+
+@media (max-width: 700px) {
+  nav {
+    display: none;
+  }
+
+  header {
+    height: calc( 515px - 80px);
+  }
+
+  #blobs {
     position: absolute;
-    width: 1px;
-    white-space: nowrap; /* 1 */
+    width: 1214px;
+    height: 515px;
+    top: -80px;
+    left: -607px;
+    right: 0;
+  }
+
+  #blob-nav {
+    top: -10%;
+    right: -50%;
+  }
+
+  #cta h1 {
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  #cta p {
+    font-size: 22px;
+  }
+
+  section > * {
+    width: 80%;
+  }
+
+  section {
+    font-size: 18px;
+    padding-top: 75px;
+  }
+
+  section h2 {
+    margin-bottom: 10px;
+  }
+
+  .image {
+    width: 100%;
+    margin-top: 75px;
+  }
 }
 
-/*
- * Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    -webkit-clip-path: none;
-    clip-path: none;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-    white-space: inherit;
-}
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-    visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-
-    pre {
-        white-space: pre-wrap !important;
-    }
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+@media (min-width: 1400px) {
+  #blob-nav {
+    right: 50%;
+    margin-right: -750px;
+  }
 }
