@@ -41,7 +41,7 @@ a:hover:after {
   border-bottom: none;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+h1 a:after, h2 a:after, h3 a:after, h4 a:after, h5 a:after, h6 a:after {
   border: none;
 }
 
@@ -162,6 +162,10 @@ header nav a, header nav a:hover, header nav a:visited, header nav a:active {
   letter-spacing: 2px;
   margin: 10px 0;
   font-size: 14px;
+  border: none;
+}
+
+header nav a:after, header nav a:hover:after, header nav a:visited:after, header nav a:active:after {
   border: none;
 }
 
