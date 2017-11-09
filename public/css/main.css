@@ -22,11 +22,22 @@ body {
 
 a, a:hover, a:visited, a:active {
   color: #EAADC8;
-  border-bottom: 1px solid #fff;
   text-decoration: none;
+  position: relative;
+  display: inline;
 }
 
-a:hover {
+a:after {
+  content: " ";
+  display: block;
+  width: 100%;
+  position: absolute;
+  border-bottom: 1px solid #fff;
+  bottom:2px;
+  left: 0;
+}
+
+a:hover:after {
   border-bottom: none;
 }
 
@@ -174,6 +185,7 @@ section h2 {
   font-size: 36px;
   letter-spacing: 2.5px;
   margin-bottom: 30px;
+  margin-top: 0;
   color: #fff;
 }
 
