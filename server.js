@@ -83,10 +83,10 @@ const SMS_COMMANDS = {
   HELP: ['help', 'commands']
 }
 
-function determineMessageIntent(msg) {
-  for (command in SMS_COMMANDS) {
-    for (var i=0; i < SMS_COMMANDS[command].length; i++) {
-      if (msg.toLowerCase().includes(SMS_COMMANDS[command][i])) {
+function determineMessageIntent(msg, command_list) {
+  for (command in command_list) {
+    for (var i=0; i < command_list[command].length; i++) {
+      if (msg.toLowerCase().includes(command_list[command][i])) {
         return command;
       }
     }
@@ -174,12 +174,10 @@ function help(respCallback, optMsgStart) {
   }
 
   response.message += responses.commands;
-
   respCallback(response);
 }
 
 app.get("/api/sms", function(req, res) {
-
   if (process.env.TWILIO_ACCOUNT_SID !== req.query.AccountSid) {
     utils.handleError(res, "Invalid access", "You do not have access to this.", 403)
   } else if (!req.query.Body) {
@@ -189,6 +187,7 @@ app.get("/api/sms", function(req, res) {
     const message = req.query.Body
     const twiml = new MessagingResponse();
     const respMsg = twiml.message();
+
 
     function respCallback(response, err) {
       console.log(response);
@@ -203,8 +202,9 @@ app.get("/api/sms", function(req, res) {
       }
     }
 
+
     if (message) {
-      let requestCommand = determineMessageIntent(message);
+      let requestCommand = determineMessageIntent(message, SMS_COMMANDS);
 
       console.log(requestCommand);
 
@@ -235,6 +235,80 @@ app.get("/api/sms", function(req, res) {
           break;
         default:
           help(respCallback, responses.sorry);
+          break;
+      }
+    }
+  }
+});
+
+
+/* Management section */
+
+const SMS_MANAGEMENT_COMMANDS = {
+  LIST: ['list'],
+  COUNT: ['count'],
+  BROADCAST: ['broadcast']
+}
+
+function count(respCallback) {
+  let response = {};
+  db.collection(SMS_SUB_COLLECTION).count(function(err, count) {
+    if (err) {
+      response.message = "Sorry but something went wrong.";
+      respCallback(response, "Failed to get count.");
+    } else {
+      response.message = count;
+      respCallback(response);
+    }
+  });
+}
+
+function broadcast(respCallback) {
+  let response = {};
+  response.message = "This doesn't work.....yet.";
+  respCallback(response);
+}
+
+
+app.get("/api/sms_manager", function(req, res) {
+  console.log(req.query.AccountSid);
+  console.log(req.query.From);
+  if (process.env.TWILIO_ACCOUNT_MANAGER_SID !== req.query.AccountSid || !process.env.TWILIO_MANAGER_WHITELIST.includes(req.query.From.trim())) {
+    utils.handleError(res, "Invalid access", "You do not have access to this.", 403)
+  } else if (!req.query.Body) {
+    utils.handleError(res, "No message.", "There was no message.", 400)
+  } else {
+    const phoneNumber = req.query.From;
+    const message = req.query.Body
+    const twiml = new MessagingResponse();
+    const respMsg = twiml.message();
+
+    function respCallback(response, err) {
+      console.log(response);
+      if (err) {
+        utils.handleError(res, err, err, 500);
+      } else {
+        if (response.message) {
+          respMsg.body(response.message);
+        }
+        res.writeHead(200, {'Content-Type': 'text/xml'});
+        res.end(twiml.toString());
+      }
+    }
+
+    if (message) {
+      let requestCommand = determineMessageIntent(message, SMS_MANAGEMENT_COMMANDS);
+      console.log(requestCommand);
+
+      switch(requestCommand) {
+        case 'COUNT':
+          count(respCallback);
+          break;
+        case 'BROADCAST':
+          broadcast(respCallback);
+          break;
+        default:
+          help(respCallback)
           break;
       }
     }
