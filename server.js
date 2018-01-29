@@ -269,6 +269,12 @@ function broadcast(respCallback) {
   respCallback(response);
 }
 
+app.get("/rsvp", function (req, res) {
+  res.writeHead(302, {
+    'Location': 'https://docs.google.com/forms/d/e/1FAIpQLScV50dYZuzKLu7Xat9Zc63Lf1DjqmgB-LRxio3F1Gk0LD0RVw/viewform?usp=sf_link'
+  });
+  res.end();
+});
 
 app.get("/api/sms_manager", function(req, res) {
   console.log(req.query.AccountSid);
