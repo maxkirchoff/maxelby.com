@@ -30,8 +30,6 @@ header {
 		background-position: center -15vw;
 }
 
-
-
 header h1 {
 	font-family: 'Gelasio', serif;
   position: absolute;
@@ -147,5 +145,103 @@ footer {
 
 	#social-links a:first-of-type {
 		padding-left: 0;
+	}
+}
+
+
+#bday {
+	background-image: url('img/megan-bday.jpg');
+	background-size: cover;
+	background-position: 20% top;
+	position: relative;
+}
+@media (min-width: 1000px) {
+	#bday {
+		background-position: center top;
+	}
+}
+
+#bday header {
+	background-image: none;
+	position: relative;
+	max-width: 100%;
+
+	height: auto;
+	left: auto;
+	right: auto;
+	width: 95%;
+	margin: 35vh auto 0;
+}
+@media (min-width: 1000px) {
+	#bday header {
+		width: 90%;
+		margin: 2.5vw 2vw 0 auto;
+	}
+}
+
+#bday header h1 {
+	position: relative;
+	margin: 0;
+	left: auto;
+	right: auto;
+	color: #fff;
+}
+
+#bday header img {
+	width: 100%;
+	display: block;
+}
+
+#bday section {
+	margin: 2.5vw 0 0 auto;
+	background: rgba(0,0,0,0.8);
+	padding: 3vw 5vw;
+	text-align: center;
+	color: #fff;
+}
+@media (min-width: 1000px) {
+	#bday section {
+		text-align: left;
+		width: 30vw;
+		border-radius: 25px 0 0 25px;
+	}
+}
+
+#bday section a {
+	color: pink;
+}
+#bday section h2 {
+	font-size: 5vw;
+}
+#bday section p, #bday section li {
+	font-size: 3vw;
+}
+#bday section li {
+	margin-top: 3vw;
+}
+@media (min-width: 1000px) {
+	#bday section h2 {
+		font-size: 2.5vw;
+	}
+	#bday section p, #bday section li {
+		font-size: 1.5vw;
+	}
+	#bday section li {
+		margin-top: 1.5vw;
+	}
+}
+
+.hide-desktop {
+	display: block;
+}
+.hide-mobile {
+	display: none;
+}
+@media (min-width: 1000px) {
+	.hide-mobile {
+		display: block;
+	}
+	.hide-desktop {
+		display: none;
 	}
 }
