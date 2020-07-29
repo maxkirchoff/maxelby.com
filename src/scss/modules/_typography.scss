@@ -1,0 +1,48 @@
+
+@font-face {
+  font-family: 'anc';
+  src: url('/assets/fonts/ANC-Bold.eot');
+  src: local('Avenir Next Condensed Bold'), local('AvenirNextCondensed-Bold'),
+      url('/assets/fonts/ANC-Bold.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/ANC-Bold.woff2') format('woff2'),
+      url('/assets/fonts/ANC-Bold.woff') format('woff'),
+      url('/assets/fonts/ANC-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'anc';
+  src: url('/assets/fonts/ANC-Medium.eot');
+  src: local('Avenir Next Condensed Medium'), local('AvenirNextCondensed-Medium'),
+      url('/assets/fonts/ANC-Medium.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/ANC-Medium.woff2') format('woff2'),
+      url('/assets/fonts/ANC-Medium.woff') format('woff'),
+      url('/assets/fonts/ANC-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ancd';
+  src: url('/assets/fonts/ANC-DemiBold.eot');
+  src: local('Avenir Next Condensed Demi Bold'), local('AvenirNextCondensed-DemiBold'),
+      url('/assets/fonts/ANC-DemiBold.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/ANC-DemiBold.woff2') format('woff2'),
+      url('/assets/fonts/ANC-DemiBold.woff') format('woff'),
+      url('/assets/fonts/ANC-DemiBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'anc';
+  src: url('/assets/fonts/ANC-Regular.eot');
+  src: local('Avenir Next Condensed Regular'), local('AvenirNextCondensed-Regular'),
+      url('/assets/fonts/ANC-Regular.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/ANC-Regular.woff2') format('woff2'),
+      url('/assets/fonts/ANC-Regular.woff') format('woff'),
+      url('/assets/fonts/ANC-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
